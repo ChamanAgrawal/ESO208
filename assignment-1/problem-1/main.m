@@ -1,4 +1,3 @@
-%check if we have to find all the roots of the equation
 str = input('Give a nonlinear equation in x:','s');
 f= inline(str);
 fprintf('Enter the method you want to use for :\n1: Bisection\n2: False-position\n3: Fixed-Point\n4: Newton-Raphson\n5: Secant\n');
@@ -13,22 +12,15 @@ if way == 1,
     fprintf('Please enter proper bracket\n');
     return;
   end;
-  
-  %fprintf('Enter the initial guess for the root:\n');
-  %x0 = input('');
   fprintf('Maximum iterations you want for the method:\n');
   miter=input('');
   fprintf('Maximum relative approximate error you want for the method:\n')
   merror = input('');
   xrange = (x1-(x2-x1)):0.1:(x2+(x2-x1));
-  %xrange = 1:0.1:10
   figure;
-  %size(xrange)
   for val=1:1:size(xrange,2)
     y(val) = f(xrange(val));
   end;
-  %size(val)
-  %size(y)
   plot(xrange,y)
   xlabel('x');
   ylabel('f(x)');
@@ -79,22 +71,15 @@ if way == 2,
     fprintf('Please enter proper bracket\n');
     return;
   end;
-  
-  %fprintf('Enter the initial guess for the root:\n');
-  %x0 = input('');
   fprintf('Maximum iterations you want for the method:\n');
   miter=input('');
   fprintf('Maximum relative approximate error you want for the method:\n')
   merror = input('');
   xrange = (x1-(x2-x1)):0.1:(x2+(x2-x1));
-  %xrange = 1:0.1:10
   figure;
-  %size(xrange)
   for val=1:1:size(xrange,2)
     y(val) = f(xrange(val));
   end;
-  %size(val)
-  %size(y)
   plot(xrange,y)
   xlabel('x');
   ylabel('f(x)');
@@ -137,14 +122,10 @@ end;
 
 
 if way == 3,
-  %fprintf('Enter phi(x):\n','s');
   phiInput = input('Enter phi(x):','s');
   phi = inline(phiInput);
   fprintf('Enter the initial guess\n');
   x1 = input('');
-  
-  %fprintf('Enter the initial guess for the root:\n');
-  %x0 = input('');
   fprintf('Maximum iterations you want for the method:\n');
   miter=input('');
   fprintf('Maximum relative approximate error you want for the method:\n')
@@ -154,14 +135,10 @@ if way == 3,
   else
     xrange = (-x1+10):-0.1:(2*x1-10);
   end;
-  %xrange = 1:0.1:10
   figure;
-  %size(xrange)
   for val=1:1:size(xrange,2)
     y(val) = f(xrange(val));
   end;
-  %size(val)
-  %size(y)
   plot(xrange,y)
   xlabel('x');
   ylabel('f(x)');
@@ -190,14 +167,11 @@ end;
 
 
 if way == 4,
-  %fprintf('Enter phi(x):\n','s');
   phiInput = input('Enter derivative of f(x):','s');
   phi = inline(phiInput);
   fprintf('Enter the initial guess\n');
   x1 = input('');
   
-  %fprintf('Enter the initial guess for the root:\n');
-  %x0 = input('');
   fprintf('Maximum iterations you want for the method:\n');
   miter=input('');
   fprintf('Maximum relative approximate error you want for the method:\n')
@@ -207,14 +181,10 @@ if way == 4,
   else
     xrange = (-x1+5):-0.1:(2*x1-5);
   end;
-  %xrange = 1:0.1:10
   figure;
-  %size(xrange)
   for val=1:1:size(xrange,2)
     y(val) = f(xrange(val));
   end;
-  %size(val)
-  %size(y)
   plot(xrange,y)
   xlabel('x');
   ylabel('f(x)');
@@ -242,27 +212,19 @@ if way == 4,
 end;
 
 if way == 5,
-  %fprintf('Enter phi(x):\n','s');
   fprintf('Enter the smaller point\n');
   x1 = input('');
   fprintf('Enter the larger point\n');
   x2 = input('');
-  
-  %fprintf('Enter the initial guess for the root:\n');
-  %x0 = input('');
   fprintf('Maximum iterations you want for the method:\n');
   miter=input('');
   fprintf('Maximum relative approximate error you want for the method:\n')
   merror = input('');
   xrange = (x1-4*(x2-x1)):0.1:(x2+4*(x2-x1));
-  %xrange = 1:0.1:10
   figure;
-  %size(xrange)
   for val=1:1:size(xrange,2)
     y(val) = f(xrange(val));
   end;
-  %size(val)
-  %size(y)
   plot(xrange,y)
   xlabel('x');
   ylabel('f(x)');
