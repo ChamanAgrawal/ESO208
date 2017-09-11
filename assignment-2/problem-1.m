@@ -1,8 +1,8 @@
 clear;
-fprintf("Give your augmented matrix in a file named 'input.txt'\n");
+fprintf("Give your augmented matrix in a file named 'input1.txt'\n");
 fprintf("FORMAT: Size of augmented matrix int the first line and matrix from the next line\n");
 fprintf("Press ENTER to continue\n\n");
-fid = fopen("input.txt");
+fid = fopen("input1.txt");
 line =fgetl(fid);
 size = sscanf(line, '%f ');
 A = zeros(size,size+1);
@@ -43,7 +43,7 @@ if method == 1
    X(i,1) = X(i,1)/A(i,i);
  end;
  X
- filename = "output.txt";
+ filename = "output1.txt";
  outf = fopen (filename, "w");
  fdisp(outf , "Guass Elimination(without pivoting)\nX\n");
  fdisp(outf , X);
@@ -81,7 +81,7 @@ if method == 2
     X(i,1) = X(i,1)/A(i,i);
   end;
   X
-  filename = "output.txt";
+  filename = "output1.txt";
   outf = fopen (filename, "w");
   fdisp(outf , "Guass Elimination(with pivoting)\nX\n");
   fdisp(outf , X);
@@ -135,7 +135,7 @@ if method == 3
   L
   U
   X
-  filename = "output.txt";
+  filename = "output1.txt";
   outf = fopen(filename, "w");
   fputs(outf ,"Doolittle Method\nL\n");
   fdisp(outf ,L);
@@ -189,7 +189,7 @@ if method == 4
   L
   U
   X
-  filename = "output.txt";
+  filename = "output1.txt";
   outf = fopen(filename, "w");
   fputs(outf ,"Crout Method\nL\n");
   fdisp(outf ,L);
@@ -238,7 +238,7 @@ if method == 5
   L
   L'
   X
-  filename = "output.txt";
+  filename = "output1.txt";
   outf = fopen(filename, "w");
   fputs(outf ,"Cholesky Method\nL\n");
   fdisp(outf ,L);
@@ -246,4 +246,4 @@ if method == 5
   fdisp(outf, X);
   fclose(outf);
 end;
-fprintf("Output is in output.txt\n");
+fprintf("Output is in output1.txt\n");

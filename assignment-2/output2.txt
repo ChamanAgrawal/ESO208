@@ -1,0 +1,14 @@
+Inverse Power Method with shift
+Eigenvalue
+
+ 8.1461
+
+Eigenvector
+
+   0.93557
+  -0.30853
+   0.17181
+
+Iterations
+
+ 5
