@@ -45,6 +45,7 @@ if method == 1
  X
  filename = "output.txt";
  outf = fopen (filename, "w");
+ fdisp(outf , "Guass Elimination(without pivoting)\nX\n");
  fdisp(outf , X);
  fclose(outf);
 end;
@@ -82,6 +83,7 @@ if method == 2
   X
   filename = "output.txt";
   outf = fopen (filename, "w");
+  fdisp(outf , "Guass Elimination(with pivoting)\nX\n");
   fdisp(outf , X);
   fclose(outf);
 end;
@@ -135,11 +137,11 @@ if method == 3
   X
   filename = "output.txt";
   outf = fopen(filename, "w");
-  fputs(outf ,"\nL is\n");
+  fputs(outf ,"Doolittle Method\nL\n");
   fdisp(outf ,L);
-  fputs(outf ,"\nU is\n");
+  fputs(outf ,"\nU\n");
   fdisp(outf, U);
-  fputs(outf ,"\nX is\n");
+  fputs(outf ,"\nX\n");
   fdisp(outf, X);
   fclose(outf);
 end;
@@ -189,11 +191,11 @@ if method == 4
   X
   filename = "output.txt";
   outf = fopen(filename, "w");
-  fputs(outf ,"\nL is\n");
+  fputs(outf ,"Crout Method\nL\n");
   fdisp(outf ,L);
-  fputs(outf ,"\nU is\n");
+  fputs(outf ,"\nU\n");
   fdisp(outf, U);
-  fputs(outf ,"\nX is\n");
+  fputs(outf ,"\nX\n");
   fdisp(outf, X);
   fclose(outf);
 end;
@@ -238,11 +240,9 @@ if method == 5
   X
   filename = "output.txt";
   outf = fopen(filename, "w");
-  fputs(outf ,"\nL is\n");
+  fputs(outf ,"Cholesky Method\nL\n");
   fdisp(outf ,L);
-  fputs(outf ,"\nL' is\n");
-  fdisp(outf, L');
-  fputs(outf ,"\nX is\n");
+  fputs(outf ,"\nX\n");
   fdisp(outf, X);
   fclose(outf);
 end;
