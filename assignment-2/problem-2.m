@@ -39,13 +39,19 @@ if method == 1
     curerror=0;
     cureigenvec = A*y;
     cureigenval = 0;
+    maxelement=0;
+    maxelpos=0;
     for i=1:1:size
       cureigenval = cureigenval + cureigenvec(i,1)^2 ;
     end;
     cureigenval = sqrt(cureigenval);
     for i=1:1:size
-        curerror = max (curerror,(abs((z(i,1)-y(i,1))/y(i,1))*100));
+      if abs(y(i,1))>abs(maxelement)
+        maxelement = abs(z(i,1));
+        maxelpos = i;
+      end;
     end;
+    curerror = abs((y(maxelpos,1)-z(maxelpos,1))/y(maxelpos,1))*100;
     value(iter,2) = cureigenval;
     value(iter,1) = curerror;
     error = curerror;
